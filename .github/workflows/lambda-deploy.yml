@@ -12,6 +12,10 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Zip Lambda Function Code
+      run: |
+        zip function.zip lambda_function.py
+
     - name: Deploy to AWS Lambda
       uses: appleboy/lambda-action@master
       with:
