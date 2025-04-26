@@ -1,4 +1,4 @@
-name: Deploy AWS Lambda Function
+name: Deploy Lambda Function
 
 on:
   push:
@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
+    - name: Checkout code
       uses: actions/checkout@v2
 
     - name: Configure AWS Credentials
@@ -24,5 +24,9 @@ jobs:
         zip function.zip lambda_function.py
 
     - name: Deploy to AWS Lambda
-      run: |
-        aws lambda update-function-code --function-name CIS470-Activity-6 --zip-file fileb://function.zip
+      uses: appleboy/lambda-action@master
+      with:
+        aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        function_name: CIS470-Activity-6
+        zip_file: function.zip
