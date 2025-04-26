@@ -16,6 +16,9 @@ jobs:
       run: |
         zip function.zip lambda_function.py
 
+    - name: List files for verification
+      run: ls -l
+
     - name: Deploy to AWS Lambda
       uses: appleboy/lambda-action@master
       with:
