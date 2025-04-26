@@ -18,6 +18,6 @@ This project demonstrates automated deployment of an AWS Lambda function using *
 
 ##  API Gateway Endpoint 
 Use this URL to invoke the deployed Lambda function:
-https://0aeze5oqe8.execute-api.us-east-2.amazonaws.com/default/CIS470-Activity-6
+https://inhe2adnmk.execute-api.us-east-2.amazonaws.com/default/CIS470-Activity-6
 
 
